@@ -3,7 +3,6 @@ import Layout from '../src/components/Layout';
 const login = () => {
   return (
     <>
-      <Layout />
       <Login />
     </>
   );
