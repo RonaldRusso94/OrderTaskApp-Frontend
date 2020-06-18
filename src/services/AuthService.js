@@ -1,5 +1,7 @@
 import nookies from "nookies";
 import axios from "axios";
+import { ME_QUERY } from '../graphql/queries/users'
+
 /**
  * @description fetches user from jwt cookie
  * @param {object} ctx the next server context
@@ -14,14 +16,13 @@ export const fetchUser = async (ctx) => {
   if (token) {
     try {
       axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-
       const res = await axios.get(
-        "https://order-task-be.herokuapp.com//users/me"
+        "https://order-task-be.herokuapp.com/users/me"
       );
       return { user: res.data };
     } catch (error) {
       console.log("error", error);
-      // nookies.destroy('user_token');
+      nookies.destroy('user_token');
       return error;
     }
   } else {

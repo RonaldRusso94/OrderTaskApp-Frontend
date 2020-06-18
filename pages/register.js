@@ -1,4 +1,5 @@
 import Register from '../src/components/Register';
+import { withGuest } from '../src/lib/withAuth';
 const register = () => {
   return (
     <div>
@@ -7,4 +8,4 @@ const register = () => {
   );
 };
 
-export default register;
+export default withGuest(register);

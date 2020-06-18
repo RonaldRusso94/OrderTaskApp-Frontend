@@ -1,6 +1,8 @@
 import Layout from '../src/components/Layout';
+import { withAuth } from '../src/lib/withAuth';
 
-const index = () => {
+const index = (props) => {
+  console.log('props', props)
   return (
     <>
       <Layout />
@@ -8,4 +10,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default withAuth(index);

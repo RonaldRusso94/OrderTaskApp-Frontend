@@ -1,5 +1,6 @@
-import react, { useState } from 'react';
+import { useState } from 'react';
 import { setCookie } from "nookies";
+import Link from 'next/link'
 import Input from './common/Input';
 import { LOGIN_MUTATION } from '../graphql/mutations/users';
 import { useMutation } from '@apollo/react-hooks';
@@ -74,9 +75,11 @@ const Login = () => {
             <div className='text-center pt-12 pb-12'>
               <p>
                 Don't have an account?{' '}
+                <Link href="/register">
                 <a href='/register' className='underline font-semibold'>
                   Register here.
                 </a>
+                </Link>
               </p>
             </div>
           </div>

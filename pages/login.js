@@ -1,4 +1,5 @@
 import Login from '../src/components/Login';
+import { withGuest } from '../src/lib/withAuth';
 const login = () => {
   return (
     <>
@@ -7,4 +8,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default withGuest(login);
