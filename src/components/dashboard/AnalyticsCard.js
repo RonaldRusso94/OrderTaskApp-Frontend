@@ -6,7 +6,7 @@ const AnalyticsCard = () => {
     <div className="mb-6">
       <div className="flex justify-center md:justify-between flex-wrap space-x-0 space-y-4 md:space-x-1 md:space-y-0">
         {array.map((item) => (
-          <Card key={item} className="w-full md:w-1/5 lg:w-64 pt-2" style={{ width: '24%' }}>
+          <Card key={item} className="w-full md:w-6/25 pt-2">
             <div>
               <div className="flex justify-between">
                 <span className="uppercase text-xs">Sales</span>
