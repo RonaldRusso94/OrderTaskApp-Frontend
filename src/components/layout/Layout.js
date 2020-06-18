@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import propTypes from 'prop-types';
 import Navbar from './Navbar';
-
 import MobileNavbar from './MobileNav';
 
-const Layout = () => {
+const Layout = ({ children }) => {
   const [toggleMobileNav, setToggleMobileNav] = useState(false);
   return (
     <>
@@ -11,12 +11,17 @@ const Layout = () => {
         toggleMobileNav={toggleMobileNav}
         setToggleMobileNav={setToggleMobileNav}
       />
+      {children}
       <MobileNavbar
         toggleMobileNav={toggleMobileNav}
         setToggleMobileNav={setToggleMobileNav}
       />
     </>
   );
+};
+
+Layout.propTypes = {
+  children: propTypes.element.isRequired,
 };
 
 export default Layout;

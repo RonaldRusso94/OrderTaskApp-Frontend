@@ -7,7 +7,6 @@ import UserContext from '../auth/UserContext';
 const Navbar = ({ toggleMobileNav, setToggleMobileNav }) => {
   const context = useContext(UserContext);
   const { user } = context;
-  console.log('user', user)
   const storeRoutes = useSelector((state) => state.routes);
   const routes = !user ? storeRoutes : storeRoutes.filter((route) => route.guest !== true);
   return (
@@ -21,7 +20,9 @@ const Navbar = ({ toggleMobileNav, setToggleMobileNav }) => {
             {/* <!-- header logo --> */}
             <div className="header-logo">
               <h1 className="font-semibold text-black leading-relaxed">
-                <a href="/">DigitalGold</a>
+                <Link href="/">
+                  <a href="/">DigitalGold</a>
+                </Link>
               </h1>
             </div>
 
