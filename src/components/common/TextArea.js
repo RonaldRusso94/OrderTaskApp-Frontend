@@ -1,6 +1,6 @@
 import propTypes from 'prop-types';
 
-const Input = ({
+const TextArea = ({
   label,
   type,
   id,
@@ -15,19 +15,20 @@ const Input = ({
       {label || id.charAt(0).toUpperCase() + id.slice(1)}
       {/*  */}
     </label>
-    <input
+    <textarea
       name={name || id}
       type={type}
       id={id}
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline"
+      rows="5"
+      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline resize-none"
     />
   </div>
 );
 
-Input.propTypes = {
+TextArea.propTypes = {
   label: propTypes.string,
   type: propTypes.string,
   id: propTypes.string,
@@ -38,7 +39,7 @@ Input.propTypes = {
   labelClasses: propTypes.string,
 };
 
-Input.defaultProps = {
+TextArea.defaultProps = {
   label: '',
   type: 'text',
   id: '',
@@ -48,4 +49,4 @@ Input.defaultProps = {
   labelClasses: '',
 };
 
-export default Input;
+export default TextArea;
