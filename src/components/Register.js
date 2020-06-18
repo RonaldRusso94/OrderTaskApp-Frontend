@@ -1,13 +1,20 @@
 import { useState } from "react";
+import { useMutation } from "@apollo/react-hooks";
 import Link from "next/link";
 import Input from "./common/Input";
+import { REGISTER_MUTATION } from "../graphql/mutations/users";
+import { withApollo } from "../lib/apollo";
 
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setpasswordConfirm] = useState("");
-
+  const [formError, setFormError] = useState("");
+  const [
+    register,
+    { loading: mutationLoading, error: mutationError },
+  ] = useMutation(REGISTER_MUTATION);
   return (
     <div>
       <div className="w-full flex flex-wrap">
@@ -18,17 +25,37 @@ const Register = () => {
               Logo
             </a>
           </div>
-
           <div className="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">
             <p className="text-center text-3xl">Welcome.</p>
+            {formError && <p className="text-red-600">{formError}</p>}
             <form
               className="flex flex-col pt-3 md:pt-8"
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={(e) => {
+                setFormError("");
+                e.preventDefault();
+                if (password !== passwordConfirm)
+                  setFormError("Passwords must match");
+                register({
+                  variables: {
+                    name: name || null,
+                    email: email || null,
+                    password: password || null,
+                    provider: "local",
+                    username: Date.now() + name,
+                  },
+                })
+                  .then((res) => {
+                    console.log("res", res);
+                  })
+                  .catch((err) => {
+                    console.log("err", err.graphQL);
+                  });
+              }}
             >
               <Input
                 type={"text"}
                 id={"name"}
-                placeholder={"John Doe"}
+                placeholder={"Full Name"}
                 htmlFor={"name"}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -37,8 +64,8 @@ const Register = () => {
               <Input
                 type={"email"}
                 id={"email"}
-                placeholder={"John Doe"}
-                htmlFor={"your@email.com"}
+                placeholder={"Email"}
+                htmlFor={"email"}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -56,7 +83,7 @@ const Register = () => {
                 label={"Confirm Password"}
                 type={"password"}
                 id={"password2"}
-                placeholder={"Password"}
+                placeholder={"Confirm Password"}
                 htmlFor={"password"}
                 value={passwordConfirm}
                 onChange={(e) => setpasswordConfirm(e.target.value)}
@@ -93,4 +120,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default withApollo(Register);
