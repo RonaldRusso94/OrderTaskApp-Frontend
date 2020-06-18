@@ -1,8 +1,8 @@
+import Input from './common/Input';
+
 const Register = () => {
   return (
     <div>
-      {/* <body class="bg-white font-family-karla h-screen"> */}
-
       <div className='w-full flex flex-wrap'>
         {/* <!-- Login Section --> */}
         <div className='w-full md:w-1/2 flex flex-col'>
@@ -18,53 +18,34 @@ const Register = () => {
               className='flex flex-col pt-3 md:pt-8'
               onSubmit={(e) => e.preventDefault()}
             >
-              <div className='flex flex-col pt-4'>
-                <label htmlFor='email' className='text-lg'>
-                  Name
-                </label>
-                <input
-                  type='text'
-                  id='name'
-                  placeholder='John Doe'
-                  className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline'
-                />
-              </div>
+              <Input
+                type={'text'}
+                id={'name'}
+                placeholder={'John Doe'}
+                htmlFor={'email'}
+              />
 
-              <div className='flex flex-col pt-4'>
-                <label htmlFor='email' className='text-lg'>
-                  Email
-                </label>
-                <input
-                  type='email'
-                  id='email'
-                  placeholder='your@email.com'
-                  className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline'
-                />
-              </div>
+              <Input
+                type={'email'}
+                id={'email'}
+                placeholder={'John Doe'}
+                htmlFor={'your@email.com'}
+              />
 
-              <div className='flex flex-col pt-4'>
-                <label htmlFor='password' className='text-lg'>
-                  Password
-                </label>
-                <input
-                  type='password'
-                  id='password'
-                  placeholder='Password'
-                  className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline'
-                />
-              </div>
+              <Input
+                type={'password'}
+                id={'password'}
+                placeholder={'Password'}
+                htmlFor={'password'}
+              />
 
-              <div className='flex flex-col pt-4'>
-                <label htmlFor='password' className='text-lg'>
-                  Confirm Password
-                </label>
-                <input
-                  type='password'
-                  id='password'
-                  placeholder='Password'
-                  className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline'
-                />
-              </div>
+              <Input
+                label={'Confirm Password'}
+                type={'password'}
+                id={'password2'}
+                placeholder={'Password'}
+                htmlFor={'password'}
+              />
 
               <input
                 type='submit'
@@ -74,9 +55,9 @@ const Register = () => {
             </form>
             <div className='text-center pt-12 pb-12'>
               <p>
-                Don't have an account?{' '}
-                <a href='register.html' className='underline font-semibold'>
-                  Register here.
+                Have an account?{' '}
+                <a href='/login' className='underline font-semibold'>
+                  Login here.
                 </a>
               </p>
             </div>

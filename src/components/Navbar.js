@@ -1,11 +1,13 @@
-// import { useSelector } from 'react-redux';
-// import Link from 'next/link';
+import { useSelector } from 'react-redux';
+import Link from 'next/link';
+
 const Navbar = ({ toggleMobileNav, setToggleMobileNav }) => {
+  const routes = useSelector((state) => state.routes);
   return (
     <>
       {console.log(toggleMobileNav)}
       {/* <!-- header --> */}
-      <header className='header my-8'>
+      <header className='header py-4 bg-gray-500'>
         {/* <!-- container --> */}
         <div className='container px-4 sm:px-8 lg:px-16 xl:px-20 mx-auto'>
           {/* <!-- header wrapper --> */}
@@ -40,10 +42,21 @@ const Navbar = ({ toggleMobileNav, setToggleMobileNav }) => {
             {/* <!-- Navbar --> */}
             <navbar className='navbar hidden md:block'>
               <ul className='flex space-x-8 text-sm font-semibold'>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                {/* {routes.map((route) => (
+                <li>
+                  {/* <Link href={route.href}>
+                    <a
+                      href={route.href}
+                      className={`${
+                        route.desktopClassList
+                          ? route.desktopClassList
+                          : 'hover:text-orange-500'
+                      }`}
+                    >
+                      {route.name}
+                    </a>
+                  </Link>{' '} */}
+                </li>
+                {routes.map((route) => (
                   <>
                     <li>
                       <Link href={route.href}>
@@ -60,7 +73,7 @@ const Navbar = ({ toggleMobileNav, setToggleMobileNav }) => {
                       </Link>{' '}
                     </li>
                   </>
-                ))} */}
+                ))}
               </ul>
             </navbar>
           </div>

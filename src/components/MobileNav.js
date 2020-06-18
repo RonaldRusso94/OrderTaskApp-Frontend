@@ -1,8 +1,8 @@
-// import { useSelector } from 'react-redux';
-// import Link from 'next/link';
+import { useSelector } from 'react-redux';
+import Link from 'next/link';
 
 const MobileNavbar = ({ toggleMobileNav, setToggleMobileNav }) => {
-  //   const routes = useSelector((state) => state.routes);
+  const routes = useSelector((state) => state.routes);
 
   return (
     <>
@@ -34,10 +34,7 @@ const MobileNavbar = ({ toggleMobileNav, setToggleMobileNav }) => {
                 </button>
               </div>
               <ul className='divide-y'>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                {/* {routes.map((route) => (
+                {routes.map((route) => (
                   <>
                     <li>
                       <Link href={route.href}>
@@ -45,7 +42,7 @@ const MobileNavbar = ({ toggleMobileNav, setToggleMobileNav }) => {
                           href={route.href}
                           className={`${
                             route.mobileClassList
-                              ? route.ClassList
+                              ? route.mobileClassList
                               : 'my-4 inline-block active font-bold'
                           }`}
                         >
@@ -54,7 +51,7 @@ const MobileNavbar = ({ toggleMobileNav, setToggleMobileNav }) => {
                       </Link>{' '}
                     </li>
                   </>
-                ))} */}
+                ))}
               </ul>
 
               {/* <!-- follow us --> */}
