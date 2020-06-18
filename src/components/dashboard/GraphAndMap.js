@@ -1,7 +1,7 @@
 import Card from '../common/Card';
 
 const GraphAndMap = () => (
-  <div className="flex flex-wrap md:flex-no-wrap justify-center space-y-3 md:space-y-0 md:justify-between space-x-4">
+  <div className="flex flex-wrap md:flex-no-wrap justify-center space-y-3 md:space-y-0 md:justify-between space-x-0 md:space-x-4">
     <Card className="w-full md:w-3/5 pt-3">
       <>
         <span>Traffic Summary</span>
