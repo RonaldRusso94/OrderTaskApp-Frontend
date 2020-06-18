@@ -52,7 +52,7 @@ const Navbar = ({ toggleMobileNav, setToggleMobileNav }) => {
               <ul className="flex space-x-8 text-sm font-semibold items-center">
                 {routes.map((route) => (
                   <>
-                    <li>
+                    <li key={route}>
                       <Link href={route.href}>
                         <a
                           href={route.href}
