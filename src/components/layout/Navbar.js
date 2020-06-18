@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import Link from 'next/link';
-import { withRedux } from '../lib/redux';
+import { withRedux } from '../../lib/redux';
 
 const Navbar = ({ toggleMobileNav, setToggleMobileNav }) => {
   const routes = useSelector((state) => state.routes);

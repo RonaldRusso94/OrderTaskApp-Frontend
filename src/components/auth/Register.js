@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import Link from 'next/link';
-import Input from './common/Input';
-import { REGISTER_MUTATION } from '../graphql/mutations/users';
-import { withApollo } from '../lib/apollo';
+import Input from '../common/Input';
+import { REGISTER_MUTATION } from '../../graphql/mutations/users';
+import { withApollo } from '../../lib/apollo';
 
 const Register = () => {
   const [name, setName] = useState('');

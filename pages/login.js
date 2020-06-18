@@ -1,11 +1,10 @@
-import Login from '../src/components/Login';
+import Login from '../src/components/auth/Login';
 import { withGuest } from '../src/lib/withAuth';
-const login = () => {
-  return (
-    <>
-      <Login />
-    </>
-  );
-};
+
+const login = () => (
+  <>
+    <Login />
+  </>
+);
 
 export default withGuest(login);
