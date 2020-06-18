@@ -52,7 +52,7 @@ const Login = () => {
         </div>
 
         {/* <!-- Image Section --> */}
-        <div className='w-1/3 shadow-2xl'>
+        <div className='w-1/2 shadow-2xl'>
           <img
             className='object-cover w-full h-screen hidden md:block'
             src='https://source.unsplash.com/IXUM4cJynP0'
