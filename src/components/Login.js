@@ -1,9 +1,15 @@
 import react, { useState } from 'react';
+import { setCookie } from "nookies";
 import Input from './common/Input';
+import { LOGIN_MUTATION } from '../graphql/mutations/users';
+import { useMutation } from '@apollo/react-hooks';
+import { withApollo } from '../lib/apollo';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+    const [login, { loading: mutationLoading }] = useMutation(LOGIN_MUTATION);
+
 
   return (
     <div>
@@ -22,7 +28,24 @@ const Login = () => {
             <p className='text-center text-3xl'>Welcome.</p>
             <form
               className='flex flex-col pt-3 md:pt-8'
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={ async (e) => {
+                 e.preventDefault();
+                 try {
+                   const { data } = await login({
+                     variables: {
+                       email,
+                       password,
+                     },
+                   });
+                   console.log("res", data);
+                   setCookie(null, "user_token", data.login.jwt, {
+                     maxAge: 30 * 24 * 60 * 600,
+                     path: "/",
+                   });
+                 } catch(err) {
+                   console.log('err', err)
+                 }
+              }}
             >
               <Input
                 type={'email'}
@@ -71,4 +94,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default withApollo(Login);

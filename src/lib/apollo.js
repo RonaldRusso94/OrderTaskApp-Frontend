@@ -133,10 +133,7 @@ function createApolloClient(initialState = {}) {
   return new ApolloClient({
     ssrMode: typeof window === "undefined", // Disables forceFetch on the server (so queries are only run once)
     link: new HttpLink({
-      uri:
-        process.env.NODE_ENV === "production"
-          ? "https://rummmble-cms.herokuapp.com/graphql"
-          : "http://localhost:1337/graphql", // Server URL (must be absolute)
+      uri: "https://order-task-be.herokuapp.com/graphql", // Server URL (must be absolute)
       credentials: "same-origin", // Additional fetch() options like `credentials` or `headers`,
       headers: {
         Authorization,
