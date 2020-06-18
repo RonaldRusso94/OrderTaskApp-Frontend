@@ -1,6 +1,12 @@
+import react, { useState } from 'react';
 import Input from './common/Input';
 
 const Register = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordConfirm, setpasswordConfirm] = useState('');
+
   return (
     <div>
       <div className='w-full flex flex-wrap'>
@@ -22,7 +28,9 @@ const Register = () => {
                 type={'text'}
                 id={'name'}
                 placeholder={'John Doe'}
-                htmlFor={'email'}
+                htmlFor={'name'}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
 
               <Input
@@ -30,6 +38,8 @@ const Register = () => {
                 id={'email'}
                 placeholder={'John Doe'}
                 htmlFor={'your@email.com'}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
 
               <Input
@@ -37,6 +47,8 @@ const Register = () => {
                 id={'password'}
                 placeholder={'Password'}
                 htmlFor={'password'}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
 
               <Input
@@ -45,6 +57,8 @@ const Register = () => {
                 id={'password2'}
                 placeholder={'Password'}
                 htmlFor={'password'}
+                value={passwordConfirm}
+                onChange={(e) => setpasswordConfirm(e.target.value)}
               />
 
               <input

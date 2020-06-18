@@ -1,6 +1,10 @@
+import react, { useState } from 'react';
 import Input from './common/Input';
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   return (
     <div>
       {/* <body class="bg-white font-family-karla h-screen"> */}
@@ -25,6 +29,8 @@ const Login = () => {
                 id={'email'}
                 placeholder={'your@email.com'}
                 htmlFor={'email'}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
 
               <Input
@@ -32,6 +38,8 @@ const Login = () => {
                 id={'password'}
                 placeholder={'Password'}
                 htmlFor={'password'}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
 
               <input

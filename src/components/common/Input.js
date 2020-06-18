@@ -1,4 +1,4 @@
-const Input = ({ label, type, id, placeholder, htmlFor }) => {
+const Input = ({ label, type, id, placeholder, htmlFor, value, onChange }) => {
   return (
     <div className='flex flex-col pt-4'>
       <label htmlFor={htmlFor} className='text-lg'>
@@ -9,6 +9,8 @@ const Input = ({ label, type, id, placeholder, htmlFor }) => {
         type={type}
         id={id}
         placeholder={placeholder}
+        value={value}
+        onChange={onChange}
         className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline'
       />
     </div>
