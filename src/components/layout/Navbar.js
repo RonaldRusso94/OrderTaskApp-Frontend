@@ -76,8 +76,8 @@ const Navbar = ({ toggleMobileNav, setToggleMobileNav }) => {
                     className="cursor-pointer opacity-75 hover:opacity-100 duration-150"
                   />
                   <div>
-                    <span className="block text-lg">{user.username}</span>
-                    <span>UI Designer</span>
+                    <span className="block">{user.username}</span>
+                    <span className="text-xs text-gray-500">UI Designer</span>
                   </div>
                 </li>
               </ul>
