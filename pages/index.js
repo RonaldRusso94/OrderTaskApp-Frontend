@@ -4,7 +4,7 @@ import { withAuth } from '../src/lib/withAuth';
 const index = () => {
   return (
     <>
-      <Layout>Landing Page! Working</Layout>
+      <Layout>Landing Page! Working!!!</Layout>
     </>
   );
 };
