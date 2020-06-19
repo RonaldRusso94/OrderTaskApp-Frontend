@@ -1,15 +1,15 @@
 import propTypes from 'prop-types';
 
-const Card = ({ className, style, children }) => <div className={`bg-white px-4 shadow-lg inline-block ${className}`} style={{ ...style }}>{children}</div>;
+const Card = ({ className, styles, children }) => <div className={`bg-white px-4 shadow-lg ${className}`} style={styles}>{children}</div>;
 Card.propTypes = {
   className: propTypes.string,
-  children: propTypes.element.isRequired,
-  style: propTypes.string,
+  children: propTypes.node.isRequired,
+  styles: propTypes.oneOfType([propTypes.object, propTypes.array]),
 };
 
 Card.defaultProps = {
   className: '',
-  style: '',
+  styles: {},
 };
 
 export default Card;

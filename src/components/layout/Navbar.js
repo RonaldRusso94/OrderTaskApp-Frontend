@@ -51,26 +51,24 @@ const Navbar = ({ toggleMobileNav, setToggleMobileNav }) => {
               </button>
             </div>
             {/* <!-- Navbar --> */}
-            <navbar className="navbar hidden md:block">
+            <div className="navbar hidden md:block">
               <ul className="flex space-x-8 text-sm font-semibold items-center">
                 {routes.map((route) => (
-                  <>
-                    <li key={route}>
-                      <Link href={route.href}>
-                        <a
-                          href={route.href}
-                          className={`${
-                            route.desktopClassList
-                              ? route.desktopClassList
-                              : 'hover:text-main-blue-400'
-                          }`}
-                        >
-                          {route.name}
-                        </a>
-                      </Link>
-                      {' '}
-                    </li>
-                  </>
+                  <li key={route.name}>
+                    <Link key={route.name} href={route.href}>
+                      <a
+                        href={route.href}
+                        className={`${
+                          route.desktopClassList
+                            ? route.desktopClassList
+                            : 'hover:text-main-blue-400'
+                        }`}
+                      >
+                        {route.name}
+                      </a>
+                    </Link>
+                    {' '}
+                  </li>
                 ))}
                 <li className="flex space-x-3 relative">
                   <img
@@ -111,7 +109,7 @@ const Navbar = ({ toggleMobileNav, setToggleMobileNav }) => {
                   </div>
                 </li>
               </ul>
-            </navbar>
+            </div>
           </div>
         </div>
       </header>

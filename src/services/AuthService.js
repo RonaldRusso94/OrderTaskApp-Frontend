@@ -1,6 +1,6 @@
-import nookies from "nookies";
-import axios from "axios";
-import { ME_QUERY } from '../graphql/queries/users'
+import nookies from 'nookies';
+import axios from 'axios';
+import { ME_QUERY } from '../graphql/queries/users';
 
 /**
  * @description fetches user from jwt cookie
@@ -15,17 +15,17 @@ export const fetchUser = async (ctx) => {
   else token = nookies.get(ctx).user_token;
   if (token) {
     try {
-      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      axios.defaults.headers.common.Authorization = `Bearer ${token}`;
       const res = await axios.get(
-        "https://order-task-be.herokuapp.com/users/me"
+        'https://order-task-be.herokuapp.com/users/me',
       );
       return { user: res.data };
     } catch (error) {
-      console.log("error", error);
-      nookies.destroy('user_token');
-      return error;
+      const getCtx = appCtx || ctx;
+      nookies.destroy(getCtx, 'user_token');
+      return { error: { message: 'No token found' } };
     }
   } else {
-    return { error: { message: "No token found" } };
+    return { error: { message: 'No token found' } };
   }
 };

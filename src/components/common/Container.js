@@ -7,7 +7,7 @@ const Container = ({ children, defaultMargins, className }) => (
 );
 
 Container.propTypes = {
-  children: propTypes.element.isRequired,
+  children: propTypes.node.isRequired,
   defaultMargins: propTypes.bool,
   className: propTypes.string,
 };
