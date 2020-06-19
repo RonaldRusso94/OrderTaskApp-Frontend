@@ -38,13 +38,13 @@ const Login = () => {
                       password,
                     },
                   });
-                  setCookie(null, 'user_token', data.login.jwt, {
+                  setCookie(null, "user_token", data.login.jwt, {
                     maxAge: 30 * 24 * 60 * 600,
-                    path: '/',
+                    path: "/",
                   });
-                  Router.push('/');
+                  Router.push("/");
                 } catch (err) {
-                  console.log('err', err);
+                  console.log("err", err);
                 }
               }}
             >
@@ -69,13 +69,12 @@ const Login = () => {
               <input
                 type="submit"
                 value="Log In"
-                className="bg-black text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8"
+                className="bg-main-blue-500 cursor-pointer text-white font-bold text-lg hover:bg-main-blue-400 p-2 mt-8"
               />
             </form>
             <div className="text-center pt-12 pb-12">
               <p>
-                Don't have an account?
-                {' '}
+                Don't have an account?{" "}
                 <Link href="/register">
                   <a href="/register" className="underline font-semibold">
                     Register here.

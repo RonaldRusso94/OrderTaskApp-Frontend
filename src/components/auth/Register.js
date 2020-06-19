@@ -90,8 +90,8 @@ const Register = () => {
 
               <input
                 type="submit"
-                value="Log In"
-                className="bg-black text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8"
+                value="Register"
+                className="bg-main-blue-500 cursor-pointer text-white font-bold text-lg hover:bg-main-blue-400 p-2 mt-8"
               />
             </form>
             <div className="text-center pt-12 pb-12">

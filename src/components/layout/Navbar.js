@@ -15,7 +15,7 @@ const Navbar = ({ toggleMobileNav, setToggleMobileNav }) => {
   return (
     <>
       {/* <!-- header --> */}
-      <header className="header py-3 border-b border-gray-400">
+      <header className="header py-3 border-b border-gray-400 bg-white">
         {/* <!-- container --> */}
         <div className="container px-4 sm:px-8 lg:px-12 xl:px-20 mx-auto">
           {/* <!-- header wrapper --> */}
@@ -62,7 +62,7 @@ const Navbar = ({ toggleMobileNav, setToggleMobileNav }) => {
                           className={`${
                             route.desktopClassList
                               ? route.desktopClassList
-                              : 'hover:text-orange-500'
+                              : 'hover:text-main-blue-400'
                           }`}
                         >
                           {route.name}
@@ -106,7 +106,7 @@ const Navbar = ({ toggleMobileNav, setToggleMobileNav }) => {
                   </div>
                   )}
                   <div>
-                    <span className="block">{user.username}</span>
+                    <span className="block">{user.name}</span>
                     <span className="text-xs text-gray-500">UI Designer</span>
                   </div>
                 </li>

@@ -12,9 +12,9 @@ const initialState = {
       href: 'login',
       guest: true,
       mobileClassList:
-        'my-8 w-full text-center font-semibold cta inline-block bg-orange-500 hover:bg-orange-600 px-3 py-2 rounded text-white font-normal',
+        'my-8 w-full text-center font-semibold cta inline-block bg-main-blue-500 hover:bg-main-blue-400 px-3 py-2 rounded text-white font-normal',
       desktopClassList:
-        'cta bg-orange-500 hover:bg-orange-600 px-3 py-2 rounded text-white font-normal',
+        'cta bg-main-blue-500 hover:bg-main-blue-400 px-3 py-2 rounded text-white font-normal',
     },
   ],
 };
