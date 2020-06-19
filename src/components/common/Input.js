@@ -1,5 +1,4 @@
 import propTypes from 'prop-types';
-// TEST
 
 const Input = ({
   label,
