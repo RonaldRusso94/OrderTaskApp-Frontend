@@ -16,19 +16,19 @@ const Login = () => {
     <div>
       {/* <body class="bg-white font-family-karla h-screen"> */}
 
-      <div className="w-full flex flex-wrap">
+      <div className='w-full flex flex-wrap'>
         {/* <!-- Login Section --> */}
-        <div className="w-full md:w-1/2 flex flex-col">
-          <div className="flex justify-center md:justify-start pt-12 md:pl-12 md:-mb-24">
-            <a href="#" className="bg-black text-white font-bold text-xl p-4">
+        <div className='w-full md:w-1/2 flex flex-col'>
+          <div className='flex justify-center md:justify-start pt-12 md:pl-12 md:-mb-24'>
+            <a href='#' className='bg-black text-white font-bold text-xl p-4'>
               Logo
             </a>
           </div>
 
-          <div className="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">
-            <p className="text-center text-3xl">Welcome.</p>
+          <div className='flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32'>
+            <p className='text-center text-3xl'>Welcome.</p>
             <form
-              className="flex flex-col pt-3 md:pt-8"
+              className='flex flex-col pt-3 md:pt-8'
               onSubmit={async (e) => {
                 e.preventDefault();
                 try {
@@ -38,45 +38,45 @@ const Login = () => {
                       password,
                     },
                   });
-                  setCookie(null, "user_token", data.login.jwt, {
+                  setCookie(null, 'user_token', data.login.jwt, {
                     maxAge: 30 * 24 * 60 * 600,
-                    path: "/",
+                    path: '/',
                   });
-                  Router.push("/");
+                  Router.push('/');
                 } catch (err) {
-                  console.log("err", err);
+                  console.log('err', err);
                 }
               }}
             >
               <Input
-                type="email"
-                id="email"
-                placeholder="your@email.com"
-                htmlFor="email"
+                type='email'
+                id='email'
+                placeholder='your@email.com'
+                htmlFor='email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
 
               <Input
-                type="password"
-                id="password"
-                placeholder="Password"
-                htmlFor="password"
+                type='password'
+                id='password'
+                placeholder='Password'
+                htmlFor='password'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
 
               <input
-                type="submit"
-                value="Log In"
-                className="bg-main-blue-500 cursor-pointer text-white font-bold text-lg hover:bg-main-blue-400 p-2 mt-8"
+                type='submit'
+                value='Log In'
+                className='bg-main-blue-500 cursor-pointer text-white font-bold text-lg hover:bg-main-blue-400 p-2 mt-8'
               />
             </form>
-            <div className="text-center pt-12 pb-12">
+            <div className='text-center pt-12 pb-12'>
               <p>
-                Don't have an account?{" "}
-                <Link href="/register">
-                  <a href="/register" className="underline font-semibold">
+                Don't have an account?{' '}
+                <Link href='/register'>
+                  <a href='/register' className='underline font-semibold'>
                     Register here.
                   </a>
                 </Link>
@@ -86,10 +86,10 @@ const Login = () => {
         </div>
 
         {/* <!-- Image Section --> */}
-        <div className="w-1/2 shadow-2xl">
+        <div className='w-1/2 shadow-2xl'>
           <img
-            className="object-cover w-full h-screen hidden md:block"
-            src="https://source.unsplash.com/IXUM4cJynP0"
+            className='object-cover w-full h-screen hidden md:block'
+            src='https://source.unsplash.com/IXUM4cJynP0'
           />
         </div>
       </div>

@@ -9,3 +9,14 @@ export const ME_QUERY = gql`
     }
   }
 `;
+
+export const GET_USER_DETAILS = gql`
+  {
+    self {
+      id
+      orders {
+        id
+      }
+    }
+  }
+`;
