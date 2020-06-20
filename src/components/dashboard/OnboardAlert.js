@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const OnboardAlert = () => {
   return (
@@ -22,9 +23,11 @@ const OnboardAlert = () => {
           tempore commodi ipsa suscipit laboriosam, sit earum at sequi.
         </p>
         <div class='flex items-center justify-end mt-4 top-auto'>
-          <button class=' bg-blue-600 text-gray-200 px-2 py-2 rounded-md '>
-            Begin
-          </button>
+          <Link href='/register/onboard'>
+            <button class=' bg-blue-600 text-gray-200 px-2 py-2 rounded-md '>
+              Begin
+            </button>
+          </Link>
         </div>
       </div>
     </div>

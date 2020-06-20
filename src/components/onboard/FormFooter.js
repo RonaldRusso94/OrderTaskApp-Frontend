@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const FormFooter = () => {
   return (
     <>
@@ -7,12 +9,14 @@ const FormFooter = () => {
           step 1 of 3
         </p>{' '}
         <div>
-          <button
-            type='button'
-            className='button bg-blue-500 text-white hover:bg-blue-400 font-bold'
-          >
-            Continue
-          </button>
+          <Link href='/register/newproject'>
+            <button
+              type='button'
+              className='button bg-blue-500 text-white hover:bg-blue-400 font-bold'
+            >
+              Continue
+            </button>
+          </Link>
         </div>
       </div>
     </>

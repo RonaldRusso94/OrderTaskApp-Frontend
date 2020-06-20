@@ -3,6 +3,7 @@ import Input from '../../src/components/common/Input';
 import TextArea from '../../src/components/common/TextArea';
 import DropDownMenu from '../../src/components/common/DropDownMenu';
 import Upload from '../../src/components/common/Upload';
+import Link from 'next/link';
 
 const newProject = () => {
   const [projectName, setProjectName] = useState('');
@@ -51,6 +52,17 @@ const newProject = () => {
           description={'Please use an image no larger than 1200px * 600px'}
           onChange={(e) => setProjectCover(e.target.value)}
         />
+
+        <div className='pt-4 flex justify-end'>
+          <Link href='/dashboard'>
+            <button
+              type='button'
+              className='button bg-blue-500 text-white hover:bg-blue-400 font-bold'
+            >
+              Continue
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
     //  </div>
