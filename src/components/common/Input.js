@@ -13,7 +13,6 @@ const Input = ({
   <div className='flex flex-col pt-4'>
     <label htmlFor={name || id} className={`${labelClasses || 'text-lg'}`}>
       {label || id.charAt(0).toUpperCase() + id.slice(1)}
-      {/*  */}
     </label>
     <input
       name={name || id}
